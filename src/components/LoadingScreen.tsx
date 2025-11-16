@@ -11,8 +11,8 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onLoadingComplete, 800);
-    }, 8000);
+      setTimeout(onLoadingComplete, 600);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);

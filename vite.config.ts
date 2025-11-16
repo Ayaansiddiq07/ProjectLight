@@ -56,7 +56,7 @@ export default defineConfig(({ mode }) => ({
     // CSS code splitting
     cssCodeSplit: true,
     // Optimize assets - inline small assets
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: 2048,
     // Report compressed size
     reportCompressedSize: false,
     // Minify CSS
