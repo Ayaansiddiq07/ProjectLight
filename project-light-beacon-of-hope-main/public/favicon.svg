@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Outer circle background (cream) -->
+  <circle cx="100" cy="100" r="100" fill="#f5f1e8"/>
+  
+  <!-- Main circle (deep blue) -->
+  <circle cx="100" cy="100" r="95" fill="#004B87"/>
+  
+  <!-- Border (golden yellow) -->
+  <circle cx="100" cy="100" r="92" stroke="#F4C430" stroke-width="4" fill="none"/>
+  
+  <!-- PL text -->
+  <text x="100" y="125" font-size="80" font-weight="bold" fill="#f5f1e8" text-anchor="middle" font-family="Arial, sans-serif">PL</text>
+  
+  <!-- Golden accent dot (sun/hope) -->
+  <circle cx="140" cy="65" r="12" fill="#F4C430" opacity="0.9"/>
+</svg>
