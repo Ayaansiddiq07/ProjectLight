@@ -5,10 +5,10 @@
   "framework": "vite",
   "outputDirectory": "dist",
   "env": {
-    "VITE_EMAILJS_SERVICE_ID": "@emailjs_service_id",
-    "VITE_EMAILJS_TEMPLATE_ID": "@emailjs_template_id",
-    "VITE_EMAILJS_PUBLIC_KEY": "@emailjs_public_key",
-    "VITE_CONTACT_EMAIL": "@contact_email"
+    "VITE_EMAILJS_SERVICE_ID": "service_jpu2j48",
+    "VITE_EMAILJS_TEMPLATE_ID": "template_pm1387y",
+    "VITE_EMAILJS_PUBLIC_KEY": "9aDFHA4whx9CYlrG4",
+    "VITE_CONTACT_EMAIL": "helpora8@gmail.com"
   },
   "headers": [
     {
