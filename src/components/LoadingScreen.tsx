@@ -12,7 +12,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onLoadingComplete, 800);
-    }, 10000);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);

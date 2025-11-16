@@ -24,10 +24,12 @@ export default defineConfig(({ mode }) => ({
       compress: {
         drop_console: true, // Remove console statements
         drop_debugger: true, // Remove debugger statements
+        passes: 2, // Multiple compression passes for better optimization
       },
       format: {
         comments: false, // Remove comments
       },
+      mangle: true, // Mangle variable names for smaller size
     },
     // Optimize chunk size
     rollupOptions: {
@@ -36,17 +38,26 @@ export default defineConfig(({ mode }) => ({
           vendor: ["react", "react-dom", "react-router-dom"],
           ui: ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
           animations: ["framer-motion"],
+          utils: ["clsx", "tailwind-merge"],
         },
+        // Optimize output format
+        format: "es",
       },
     },
     // Set chunk size warning limit
     chunkSizeWarningLimit: 1000,
     // CSS code splitting
     cssCodeSplit: true,
-    // Optimize assets
-    assetsInlineLimit: 4096,
+    // Optimize assets - inline small assets
+    assetsInlineLimit: 8192,
     // Report compressed size
     reportCompressedSize: false,
+    // Minify CSS
+    cssMinify: true,
+    // Optimize dependencies
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
   },
   // Disable source maps for dev as well
   define: {

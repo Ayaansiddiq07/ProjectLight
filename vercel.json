@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "nodeVersion": "18.x",
   "builds": [
     {
       "src": "package.json",
@@ -12,15 +16,50 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/assets/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)\\.js$",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/$1.js"
+    },
+    {
+      "src": "/(.*)\\.css$",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/$1.css"
+    },
+    {
+      "src": "/(.*)\\.woff2?$",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/$1.woff2"
+    },
+    {
+      "src": "/(.*)\\.(?:jpg|jpeg|gif|png|webp|svg|ico)$",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/$1"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
   ],
   "env": {
-    "VITE_EMAILJS_SERVICE_ID": "service_jpu2j48",
-    "VITE_EMAILJS_TEMPLATE_ID": "template_pm1387y",
-    "VITE_EMAILJS_PUBLIC_KEY": "9aDFHA4whx9CYlrG4",
-    "VITE_CONTACT_EMAIL": "helpora8@gmail.com"
+    "VITE_EMAILJS_SERVICE_ID": "@vite_emailjs_service_id",
+    "VITE_EMAILJS_TEMPLATE_ID": "@vite_emailjs_template_id",
+    "VITE_EMAILJS_PUBLIC_KEY": "@vite_emailjs_public_key",
+    "VITE_CONTACT_EMAIL": "@vite_contact_email"
   },
   "headers": [
     {
@@ -45,15 +84,19 @@
         {
           "key": "Permissions-Policy",
           "value": "geolocation=(), microphone=(), camera=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
         }
       ]
     },
     {
-      "source": "/src/(.*)",
+      "source": "/index.html",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },

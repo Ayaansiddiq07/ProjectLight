@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Build outputs
+dist
+build
+.next
+out
+
+# Development
+.env.local
+.env.*.local
+.DS_Store
+*.pem
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+DOCS
+*.md
+NETLIFY_CHECKLIST.md
+WEBSITE_UPDATES_SUMMARY.md
+
+# Testing
+.test
+.spec
+coverage
+cypress
+playwright
+
+# Lock files (optional - remove if you want to keep them)
+bun.lockb

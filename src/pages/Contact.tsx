@@ -269,8 +269,6 @@ const Contact = () => {
                 </p>
               </form>
             </GlassCard>
-
-            
           </motion.div>
         </div>
       </div>
