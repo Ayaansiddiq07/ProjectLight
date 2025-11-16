@@ -1,0 +1,157 @@
+================================================================================
+QUICK ENVIRONMENT VARIABLES SETUP
+================================================================================
+
+LOCAL DEVELOPMENT (5 minutes)
+────────────────────────────
+
+1. Create .env file in project root:
+   cp .env.example .env
+
+2. Edit .env and add your EmailJS credentials:
+   VITE_EMAILJS_SERVICE_ID=service_xxx
+   VITE_EMAILJS_TEMPLATE_ID=template_xxx
+   VITE_EMAILJS_PUBLIC_KEY=public_key_xxx
+   VITE_CONTACT_EMAIL=your@email.com
+
+3. Restart dev server:
+   npm run dev
+
+4. Test at: http://localhost:8080/contact
+
+================================================================================
+VERCEL DEPLOYMENT (5 minutes)
+────────────────────────────
+
+1. Go to: https://vercel.com/dashboard
+2. Select PROJECT LIGHT project
+3. Click: Settings → Environment Variables
+4. Add 4 variables:
+   - VITE_EMAILJS_SERVICE_ID
+   - VITE_EMAILJS_TEMPLATE_ID
+   - VITE_EMAILJS_PUBLIC_KEY
+   - VITE_CONTACT_EMAIL
+
+5. Apply to: Production, Preview, Development
+6. Redeploy project
+7. Test contact form on live site
+
+================================================================================
+GET EMAILJS CREDENTIALS (10 minutes)
+────────────────────────────────────
+
+1. Visit: https://www.emailjs.com/
+2. Sign up or log in
+3. Go to: Email Services → Create Service
+4. Go to: Email Templates → Create Template
+5. Go to: Account
+6. Copy:
+   - Service ID (starts with "service_")
+   - Template ID (starts with "template_")
+   - Public Key (long alphanumeric string)
+
+================================================================================
+ENVIRONMENT VARIABLES EXPLAINED
+════════════════════════════════
+
+VITE_EMAILJS_SERVICE_ID
+├─ What: Your EmailJS service identifier
+├─ Format: service_xxxxxxxxx
+├─ Required: YES
+└─ Where: EmailJS Dashboard → Account
+
+VITE_EMAILJS_TEMPLATE_ID
+├─ What: Your EmailJS email template identifier
+├─ Format: template_xxxxxxxxx
+├─ Required: YES
+└─ Where: EmailJS Dashboard → Email Templates
+
+VITE_EMAILJS_PUBLIC_KEY
+├─ What: Public key for client-side authentication
+├─ Format: Long alphanumeric string
+├─ Required: YES
+└─ Where: EmailJS Dashboard → Account
+
+VITE_CONTACT_EMAIL
+├─ What: Email to receive contact form submissions
+├─ Format: email@example.com
+├─ Required: NO
+└─ Default: helpora8@gmail.com
+
+================================================================================
+FILE LOCATIONS
+════════════════
+
+Local Development:
+  .env (NOT committed to Git)
+  .env.example (Template - committed to Git)
+
+Vercel:
+  Settings → Environment Variables (Web Dashboard)
+
+Code Usage:
+  src/pages/Contact.tsx (Line 27-29, 45)
+
+================================================================================
+SECURITY CHECKLIST
+═══════════════════
+
+✅ .env file is in .gitignore (never committed)
+✅ .env.example is committed (template only)
+✅ No credentials in source code
+✅ Different credentials for dev/prod
+✅ Public key is safe to expose (client-side only)
+✅ Service/Template IDs not in code
+
+================================================================================
+TROUBLESHOOTING
+════════════════
+
+Problem: Contact form says "Email service not configured"
+Solution: Check .env file has all 4 variables with correct values
+
+Problem: Works locally but not on Vercel
+Solution: Add variables to Vercel dashboard and redeploy
+
+Problem: "Invalid service ID" error
+Solution: Verify service is active in EmailJS dashboard
+
+Problem: Variables show as undefined
+Solution: Restart dev server after editing .env
+
+================================================================================
+TESTING
+════════
+
+Local Test:
+  1. npm run dev
+  2. Go to http://localhost:8080/contact
+  3. Fill form and submit
+  4. Check for success message
+
+Vercel Test:
+  1. Deploy to Vercel
+  2. Go to your live site /contact
+  3. Fill form and submit
+  4. Check for success message
+
+================================================================================
+NEXT STEPS
+═══════════
+
+1. ✅ Create .env file locally
+2. ✅ Add EmailJS credentials
+3. ✅ Test contact form locally
+4. ✅ Add variables to Vercel dashboard
+5. ✅ Redeploy on Vercel
+6. ✅ Test on live site
+
+================================================================================
+SUPPORT
+════════
+
+EmailJS Docs: https://www.emailjs.com/docs/
+Vite Env Vars: https://vitejs.dev/guide/env-and-modes.html
+Vercel Env Vars: https://vercel.com/docs/environment-variables
+
+================================================================================
