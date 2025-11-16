@@ -60,7 +60,18 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <p>JavaScript is required to run this application. Please enable JavaScript in your browser.</p>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Ensure root element exists
+      if (!document.getElementById('root')) {
+        console.error('Root element not found');
+        document.body.innerHTML = '<p>Error: Application root not found</p>';
+      }
+    </script>
   </body>
 </html>
