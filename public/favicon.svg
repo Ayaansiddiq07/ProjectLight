@@ -1,16 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Outer circle background (cream) -->
+  <!-- Circular background -->
   <circle cx="100" cy="100" r="100" fill="#f5f1e8"/>
   
-  <!-- Main circle (deep blue) -->
-  <circle cx="100" cy="100" r="95" fill="#004B87"/>
+  <!-- Hand (dark blue) -->
+  <path d="M 60 120 Q 55 110 60 95 Q 65 85 75 85 Q 85 85 90 95 L 95 110 Q 100 120 110 125 L 120 130 Q 125 132 125 140 Q 125 145 120 145 Q 110 145 100 140 L 85 135 Q 70 130 60 120 Z" fill="#004B87"/>
   
-  <!-- Border (golden yellow) -->
-  <circle cx="100" cy="100" r="92" stroke="#F4C430" stroke-width="4" fill="none"/>
+  <!-- Sun circle (golden yellow) -->
+  <circle cx="105" cy="75" r="28" fill="#F4C430"/>
   
-  <!-- PL text -->
-  <text x="100" y="125" font-size="80" font-weight="bold" fill="#f5f1e8" text-anchor="middle" font-family="Arial, sans-serif">PL</text>
+  <!-- Sun rays -->
+  <g fill="#F4C430">
+    <rect x="102" y="35" width="6" height="15" rx="3"/>
+    <rect x="102" y="125" width="6" height="15" rx="3"/>
+    <rect x="35" y="72" width="15" height="6" rx="3"/>
+    <rect x="125" y="72" width="15" height="6" rx="3"/>
+    <rect x="50" y="50" width="11" height="11" rx="2" transform="rotate(45 55.5 55.5)"/>
+    <rect x="139" y="119" width="11" height="11" rx="2" transform="rotate(45 144.5 124.5)"/>
+  </g>
   
-  <!-- Golden accent dot (sun/hope) -->
-  <circle cx="140" cy="65" r="12" fill="#F4C430" opacity="0.9"/>
+  <!-- Heart inside sun (dark blue) -->
+  <path d="M 105 65 C 105 62 107 60 109 60 C 111 60 113 62 113 65 C 113 62 115 60 117 60 C 119 60 121 62 121 65 C 121 70 116 75 113 78 C 110 75 105 70 105 65 Z" fill="#004B87" transform="scale(0.7) translate(50 20)"/>
 </svg>
