@@ -54,10 +54,6 @@ export default defineConfig(({ mode }) => ({
     reportCompressedSize: false,
     // Minify CSS
     cssMinify: true,
-    // Optimize dependencies
-    commonjsOptions: {
-      include: [/node_modules/],
-    },
   },
   // Disable source maps for dev as well
   define: {

@@ -3,17 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "nodeVersion": "18.x",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist",
-        "includeFiles": ["dist/**", "public/**"]
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/assets/(.*)",
@@ -55,12 +44,6 @@
       "dest": "/index.html"
     }
   ],
-  "env": {
-    "VITE_EMAILJS_SERVICE_ID": "@vite_emailjs_service_id",
-    "VITE_EMAILJS_TEMPLATE_ID": "@vite_emailjs_template_id",
-    "VITE_EMAILJS_PUBLIC_KEY": "@vite_emailjs_public_key",
-    "VITE_CONTACT_EMAIL": "@vite_contact_email"
-  },
   "headers": [
     {
       "source": "/(.*)",
